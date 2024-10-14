@@ -1,5 +1,6 @@
 import React from 'react';
-import '../styles/NavBar.css'; // Create this CSS file for styles
+import { Link } from 'react-router-dom'; // Import Link
+import '../styles/NavBar.css';
 
 function NavBar() {
   return (
@@ -12,7 +13,9 @@ function NavBar() {
       </div>
       <div className="navbar-right">
         <span className="location-icon">📍 Current Location</span>
-        <button className="login-btn">Login</button>
+        <Link to="/login"> {/* Use Link for navigation */}
+          <button className="login-btn">Login</button>
+        </Link>
         <button className="signup-btn">Sign Up</button>
       </div>
     </nav>

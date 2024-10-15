@@ -9,11 +9,10 @@ function App() {
     <Router>
       <div>
         <NavBar />
+        <HomePage />
         <Routes>
-        <Route path="/home" element={<HomePage />} />  {/* Route to HomePage */}
-          {/* Route for the login page */}
+           
           <Route path="/login" element={<LoginPage />} />
-          {/* Add more routes for other components/pages here */}
         </Routes>
       </div>
     </Router>

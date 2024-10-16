@@ -1,10 +1,19 @@
 .home-page {
-  padding: 10px;
-  background-color:antiquewhite;
-
+  padding-top: 70px; /* Add padding equal to the navbar's height */
+  background-image: url('../assets/bacground.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+
 .product-grid {
-  background-color:antiquewhite;
+  position: relative;
+  background-color: antiquewhite; /* Remove redundant background image */
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap; /* Allows wrapping to the next line */
@@ -22,6 +31,13 @@
   text-align: center;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease; /* Smooth transition for scaling */
+  cursor: pointer; 
+}
+
+.product-card:hover {
+  transform: scale(1.20); /* Slightly scale the card on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
 }
 
 .product-image {
@@ -34,4 +50,18 @@
 h3 {
   font-size: 1rem;
   margin: 0;
+}
+
+.product-card button {
+  padding: 10px;
+  background-color: #26A69A;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.product-card button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }

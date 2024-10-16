@@ -3,7 +3,7 @@ import '../styles/LoginPage.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'; // Import axios
 
-function LoginPage() {
+function LoginPage({setUsername}) {
   const [usernameOrEmail, setUsernameOrEmail] = useState(''); // State for username or email
   const [password, setPassword] = useState(''); // State for password
   const [error, setError] = useState(''); // State for error message
@@ -21,8 +21,11 @@ function LoginPage() {
       if (response.status === 200) {
         console.log('Login successful!', response.data);
 
+        
+        setUsername(response.data.username)
+
         // Redirect to the root page (starting point of the app)
-        navigate('/login'); // Redirects to the root route, which is often the starting page
+        navigate('/'); // Redirects to the root route, which is often the starting page
       }
     } catch (error) {
       console.error('Error:', error);

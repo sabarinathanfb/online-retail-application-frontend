@@ -34,32 +34,34 @@ function LoginPage({setUsername}) {
   };
 
   return (
-    <div className="login-page">
-      <h2>Login</h2>
-      {error && <p className="error">{error}</p>} {/* Display error message */}
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="usernameOrEmail">Username or Email:</label>
-          <input
-            type="text"
-            id="usernameOrEmail"
-            value={usernameOrEmail}
-            onChange={(e) => setUsernameOrEmail(e.target.value)} // Capture input
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)} // Capture input
-            required
-          />
-        </div>
-        <button type="submit" className="login-button">Login</button>
-      </form>
+    <div className='login-page'>
+      <div className="form">
+        <h2>Login</h2>
+        {error && <p className="error">{error}</p>} {/* Display error message */}
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="usernameOrEmail">Username or Email:</label>
+            <input
+              type="text"
+              id="usernameOrEmail"
+              value={usernameOrEmail}
+              onChange={(e) => setUsernameOrEmail(e.target.value)} // Capture input
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)} // Capture input
+              required
+            />
+          </div>
+          <button type="submit" className="login-button">Login</button>
+        </form>
+      </div>
     </div>
   );
 }

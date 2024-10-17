@@ -1,38 +1,27 @@
 *{
   margin: 0;
+  padding: 0;
+  text-decoration: none;
 
 }
 
 
 .navbar {
-  position: fixed; /* Fix the navbar at the top */
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%; /* Make it span the full width */
-  z-index: 100; /* Ensure it stays on top of other elements */
-  background-color: #07140b; /* Dark background */
-  color: white; /* White text */
-  justify-content: space-between; /* Equal space around each element */
+  z-index: 99;
+  width: 100%;
+  padding: 5px 100px 5px 100px;
+  background-color: #c8e041;
   display: flex;
-  align-items: center;
-  padding: 10px 20px 15px 50px;
+  justify-content: space-between;
 }
-
-.shop-name {
-  font-size: 45px; /* Adjust as needed */
-  color: #e4dcdc; /* Change to your preferred color */
-  text-decoration:solid;
+.navbar-left{
+  display: flex;
+  color: rgb(26, 25, 23);
+  flex-grow: 1;
 }
-
-.shop-name a {
-  color: inherit; /* Use the parent color */
-}
-
-  
-.navbar-left {
-  flex-grow: 1; /* The left side will grow to take available space */
-}
-
 
 .navbar-center {
   display: flex;
@@ -41,26 +30,55 @@
   justify-content: center;
 }
 
-.navbar-right {
-  display: flex;
-  align-items: center;
-  flex-grow: 1; /* The right side will grow */
-  justify-content: flex-end; /* Right-align elements */
+.location-detail{
+  color: white;
+}
+.search-bar {
+  margin-left: 5px;
 }
 
-/* Style for the search bar */
-.search-bar {
-  padding: 8px;
-  margin-left: 10px;
-  border: none;
-  border-radius: 4px;
-}
   
-.location-icon {
-  margin-right: 8px;
-  width: 20px;
-  height: 20px;
+
+.navbar-right {
+  padding-right: 30px;
+  display: flex;
+  align-items: center;
+  flex-grow: 1; 
+  justify-content: center; 
 }
+
+.cart-icon {
+  position: relative;
+  width: 40px; /* Adjust the width to your needs */
+  height: 40px;
+}
+.cart-icon {
+  position: relative; /* Allows you to position the count badge */
+}
+
+.cart-count {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+
+
+
+.cart-icon img {
+  width: 100%;
+  height: auto;
+}
+
+
+
+
   
 /* Buttons styling */
 .login-btn,

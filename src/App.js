@@ -14,17 +14,18 @@ function App() {
   return (
     <Router>
       <div>
-        {/* Pass both username and setUsername to NavBar */}
-        <NavBar username={username} setUsername={setUsername} />
-        <Routes>
-          {/* Pass cart and setCart as props inside the element for HomePage */}
-          <Route path="/" element={<HomePage cart={cart} setCart={setCart} />} />
-          <Route path="/signup" element={<SignUpPage />} />
-          <Route path="/login" element={<LoginPage setUsername={setUsername} />} />
-          <Route path="/cart" element={<CartPage cart={cart} setCart={setCart} />} />
-          <Route path="/product/:id" element={<ProductDetailPage />} />
-        </Routes>
-      </div>
+        <NavBar username={username} setUsername={setUsername} cart={cart}/>
+        
+        <div>
+          <Routes>
+            <Route path="/" element={<HomePage cart={cart} setCart={setCart} />} />
+            <Route path="/signup" element={<SignUpPage />} />
+            <Route path="/login" element={<LoginPage setUsername={setUsername} />} />
+            <Route path="/cart" element={<CartPage cart={cart} setCart={setCart} />} />
+            <Route path="/product/:id" element={<ProductDetailPage />} />
+          </Routes>
+        </div>
+      </div>  
     </Router>
   );
 }

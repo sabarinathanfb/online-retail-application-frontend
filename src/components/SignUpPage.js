@@ -32,6 +32,7 @@ function SignUpPage() {
 
   return (
     <div className="signup-page">
+      <div className='form'>
       <h2>Sign Up</h2>
       {error && <p className="error">{error}</p>} {/* Display error message */}
       <form onSubmit={handleSubmit}>
@@ -67,6 +68,7 @@ function SignUpPage() {
         </div>
         <button type="submit" className="signup-button">Sign Up</button>
       </form>
+      </div>
     </div>
   );
 }

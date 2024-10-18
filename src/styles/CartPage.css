@@ -1,20 +1,74 @@
 .cart-page {
-  position: relative;
-  display: block;
-  box-sizing: border-box;
-  justify-content: center;
-  align-items: center;
-  padding: 4% 10%; 
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures full height */
+  background-image: url('../assets/background.jpg'); /* Add your image path */
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents image repetition */
+
 }
+.container {
+  margin: 60px auto; /* Centering the container horizontally */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+
+  width: 80%; 
+  max-width: 900px; 
+}
+
+.address{
+  display: flex;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  padding: 10px;
+  justify-content:space-between;
+}
+.cart-item {
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  margin: 10px;
+}
+.place-order{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+.price-detail {
+  width: 200px;
+  max-height: 200px; /* Example value */
+  margin-left: 10px;
+  background-color: #ffffff;
+  padding: 8px; /* Reduced padding to minimize height */
+  border: 1px solid #e0e0e0; /* Optional: border for definition */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+  box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+.price-detail h6 {
+  margin: 0; /* Remove default margin from heading */
+  font-size: 16px; /* Adjust font size if needed */
+}
+
+.price-detail p {
+  margin: 4px 0; /* Reduce margin for paragraphs */
+  line-height: 1.2; /* Set line height to control spacing */
+}
+
+
 .cart-item img {
   width: 100px;
   margin-right: 20px;
 }
-.cart-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
+
 .cart-items {
   display: flex;
   flex-direction: column;
@@ -27,7 +81,9 @@
   border-radius: 5px;
   cursor: pointer;
 }
-.cart-item-details {
-  flex-grow: 1;
-}
+/* .cart-item-details {
+  background-color: aliceblue;
+} */
+
+
 

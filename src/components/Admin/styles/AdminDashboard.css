@@ -1,0 +1,83 @@
+.admin-dashboard {
+  display: flex; /* Use flexbox to create a horizontal layout */
+  height: 100vh; /* Full viewport height */
+  background-color: #f4f4f4;
+  margin-top: 50px; /* Light background color */
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: 250px; /* Fixed width for the sidebar */
+  background-color: #2c3e50; /* Dark background for the sidebar */
+  color: #ecf0f1; /* Light text color */
+  padding: 20px; /* Padding around the sidebar */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Shadow effect for depth */
+}
+
+.sidebar .logo {
+  font-size: 24px; /* Larger font size for the logo */
+  font-weight: bold; /* Bold text for the logo */
+  margin-bottom: 20px; /* Space below the logo */
+}
+
+.sidebar ul {
+  list-style-type: none; /* Remove default list styling */
+  padding: 0; /* Remove default padding */
+}
+
+.sidebar li {
+  margin: 15px 0; /* Vertical spacing between list items */
+}
+
+.sidebar button {
+  background: none; /* Remove button background */
+  border: none; /* Remove button border */
+  color: #ecf0f1; /* Button text color */
+  font-size: 16px; /* Font size for button */
+  cursor: pointer; /* Cursor change on hover */
+  text-align: left; /* Align text to the left */
+  width: 100%; /* Full width for button */
+}
+
+.sidebar button:hover {
+  color: #3498db; /* Change color on hover */
+}
+
+/* Styling for dropdown menus */
+.product-menu,
+.inventory-menu {
+  margin-left: 15px; /* Indent the dropdown */
+  padding-left: 10px; /* Add padding for dropdown items */
+  background: #34495e; /* Slightly lighter background for dropdown */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.product-menu li,
+.inventory-menu li {
+  margin: 10px 0; /* Spacing for dropdown items */
+}
+
+.product-menu a,
+.inventory-menu a {
+  color: #ecf0f1; /* Link text color */
+  text-decoration: none; /* Remove underline */
+}
+
+.product-menu a:hover,
+.inventory-menu a:hover {
+  color: #3498db; /* Change color on hover */
+}
+
+/* Main content styling */
+.main-content {
+  flex: 1; /* Take up the remaining space */
+  padding: 20px; /* Padding around main content */
+  background-color: #ffffff; /* White background for main content */
+  overflow-y: auto; /* Enable scrolling if content overflows */
+}
+
+/* Additional heading styling */
+.main-content h1 {
+  color: #2c3e50; /* Dark color for headings */
+  font-size: 28px; /* Font size for headings */
+}

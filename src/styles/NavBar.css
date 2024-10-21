@@ -47,6 +47,11 @@
   justify-content: center; 
 }
 
+.admin{
+  box-sizing: border-box;
+  padding: 30px;
+}
+
 .cart-icon {
   position: relative;
   width: 40px; /* Adjust the width to your needs */

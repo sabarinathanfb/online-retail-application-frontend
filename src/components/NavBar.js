@@ -27,13 +27,22 @@ function NavBar({ username, setUsername, cart}) { // Receive setUsername as a pr
       </div>
 
       <div className="navbar-right">
+        <div className='admin'>
+          <Link to='/admin'>
+            Admin
+          </Link>
+        </div>
+
             <div className='cart-icon'>
               <Link to="/cart">
               <img src={CartIcon} alt="Cart Icon" />
               <span className="cart-count">{cart.length > 0 ? cart.length : 0}</span>
               </Link>
             </div>
-        {username ? ( // Check if a username is provided
+        {username ? (
+           // Check if a username is provided
+
+          
           <div className="user-info">
             <span>Welcome, {username}!</span> {/* Display the username */}
             <button className="logout-btn" onClick={handleLogout}>Logout</button> {/* Logout button */}

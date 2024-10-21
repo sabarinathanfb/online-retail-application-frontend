@@ -3,27 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import QuantityCounter from '../components/QuantityCounter';
 import '../styles/HomePage.css';
 
-const HomePage = ({ cart, setCart }) => {
-  const [products, setProducts] = useState([]);
+const HomePage = ({products, cart, setCart }) => {
   const navigate = useNavigate();
 
-  const fetchProducts = async () => {
-    try {
-      const response = await fetch('http://localhost:8080/api/products/getAllProduct');
-      if (!response.ok) {
-        throw new Error(`Error fetching products: ${response.statusText}`);
-      }
-
-      const productData = await response.json();
-      setProducts(productData);
-    } catch (error) {
-      console.error('Error fetching products:', error);
-    }
-  };
-
-  useEffect(() => {
-    fetchProducts();
-  }, []);
+ 
 
   const handleAddToCart = (product) => {
     const isProductInCart = cart.some((item) => item.id === product.id);

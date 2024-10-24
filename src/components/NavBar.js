@@ -12,6 +12,8 @@ function NavBar({ username, setUsername, cart}) { // Receive setUsername as a pr
   const handleLogout = () => {
     setUsername(null); // Reset username to null
     navigate('/'); // Redirect to the home page or login page after logout
+    localStorage.removeItem('token');
+    localStorage.removeItem('userId');
   };
 
   return (

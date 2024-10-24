@@ -11,15 +11,28 @@ function GetAllStock({ products }) {
       {productList.length === 0 ? ( // Conditional rendering for empty state
         <p>No products available.</p>
       ) : (
-        <ul>
-          {productList.map(product => (
-            <li key={product.id}>
-    
-              {product.name} - Quantity: {product.quantity}
-              {}
-            </li>
-          ))}
-        </ul>
+        <table className="product-table">
+          <thead>
+            <tr>
+              <th>Product Name</th>
+              <th>Brand</th>
+              <th>sku</th>
+              <th>Quantity</th>
+            </tr>
+          </thead>
+          <tbody>
+            {productList.map(product => (
+              <tr key={product.id}>
+                <td>{product.name}</td>
+                <td>{product.brand}</td>
+                <td>{product.sku}</td>
+                <td>{product.quantity}</td>
+            
+              
+              </tr>
+            ))}
+          </tbody>
+        </table>
       )}
     </div>
   );

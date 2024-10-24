@@ -14,9 +14,9 @@ function SignUpPage() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:9000/api/register', { // Replace with your API endpoint
+      const response = await axios.post('http://localhost:8081/api/auth/signup', { // Replace with your API endpoint
         username,
-        // email,
+        email,
         password,
       });
 
@@ -46,7 +46,7 @@ function SignUpPage() {
             required
           />
         </div>
-        {/* <div className="form-group">
+        <div className="form-group">
           <label htmlFor="email">Email:</label>
           <input
             type="email"
@@ -55,7 +55,7 @@ function SignUpPage() {
             onChange={(e) => setEmail(e.target.value)} // Capture input
             required
           />
-        </div> */}
+        </div>
         <div className="form-group">
           <label htmlFor="password">Password:</label>
           <input

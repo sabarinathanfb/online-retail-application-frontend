@@ -3,35 +3,55 @@ import '../styles/LoginPage.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'; // Import axios
 
-function LoginPage({setUsername}) {
+function LoginPage({ setUsername }) {
   const [usernameOrEmail, setUsernameOrEmail] = useState(''); // State for username or email
   const [password, setPassword] = useState(''); // State for password
   const [error, setError] = useState(''); // State for error message
-  const navigate = useNavigate()
+  const navigate = useNavigate(); // Hook for navigation
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-
+    e.preventDefault(); // Prevent default form submission
+  
     try {
-      const response = await axios.post('http://localhost:9000/api/login', { // Replace with your API endpoint
+      const response = await axios.post('http://localhost:8081/api/auth/login', {
         username: usernameOrEmail, // Sending username/email
         password,
       });
-
+  
       if (response.status === 200) {
         console.log('Login successful!', response.data);
-
-        
-        setUsername(response.data.username)
-
-        // Redirect to the root page (starting point of the app)
-        navigate('/'); // Redirects to the root route, which is often the starting page
+  
+        // Retrieve token and user ID from response
+        const token = response.headers['authorization'];
+        const userId = response.data.userId; // Assuming user ID is part of the response
+  
+        console.log(token);
+  
+        if (token && userId) { 
+          // Only store if both token and userId are present
+          localStorage.setItem('token', token); // Store the token in localStorage
+          localStorage.setItem('userId', userId); // Store the user ID in localStorage
+          setUsername(response.data.username); // Set the username in the parent component
+  
+          // Redirect to the root page
+          navigate('/'); // Redirects to the home page or starting point of the app
+        } else {
+          throw new Error('Missing token or userId in the response');
+        }
       }
     } catch (error) {
       console.error('Error:', error);
       setError('Login failed! Please check your credentials.'); // Handle failed login
+      // Optionally handle different error responses
+      if (error.response) {
+        if (error.response.status === 401) {
+          setError('Invalid username or password.'); // Specific error message for 401
+        }
+        // You can handle other statuses as needed
+      }
     }
   };
+  
 
   return (
     <div className='login-page'>

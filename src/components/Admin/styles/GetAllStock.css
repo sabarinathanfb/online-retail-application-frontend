@@ -1,0 +1,27 @@
+/* GetAllStock.css */
+.product-table {
+    width: 100%; /* Full width for the table */
+    border-collapse: collapse; /* Merge table borders */
+    margin-top: 20px; /* Space above the table */
+  }
+  
+  .product-table th,
+  .product-table td {
+    border: 1px solid #ddd; /* Light border for table cells */
+    padding: 8px; /* Padding inside cells */
+    text-align: left; /* Align text to the left */
+  }
+  
+  .product-table th {
+    background-color: #f2f2f2; /* Light background for header */
+    font-weight: bold; /* Bold text for header */
+  }
+  
+  .product-table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Zebra striping effect */
+  }
+  
+  .product-table tr:hover {
+    background-color: #f1f1f1; /* Change background on hover */
+  }
+  
